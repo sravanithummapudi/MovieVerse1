@@ -3,9 +3,9 @@ A full-stack web application to manage movies using a Spring Boot backend (`movi
 # Tech Stack
 
 - **Frontend**: React, Semantic UI React  
-- **Backend**: Spring Boot, OAuth2, JWT  
+- **Backend**: Spring Boot 
 - **Database**: PostgreSQL  
-- **Authentication**: GitHub OAuth2, Google OAuth2 
+- **Authentication**: GitHub & Google OAuth2, JWT
 - **API Docs**: Swagger
 
 # Endpoint Summary ( movie-api)
@@ -35,7 +35,7 @@ A full-stack web application to manage movies using a Spring Boot backend (`movi
 # Application Url
 - Application	URL	Credentials:
 - movie-api	http://localhost:8080/swagger-ui.html	
-- movie-ui	http://localhost:3000	admin/admin, user/user, or signing up a new user
+- movie-ui	http://localhost:3000	admin, user, or signing up a new user
 
 # Testing the Application
 ## Manual Testing:
