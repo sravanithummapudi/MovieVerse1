@@ -25,17 +25,17 @@ A full-stack web application to manage movies using a Spring Boot backend (`movi
 
 
 # Frontend (movie-ui)
-Built using React and Semantic UI.
-Supports GitHub & Google Oauth2 and direct login.
-JWT token is used for all secured API requests.
-Role-based UI:
-USER: Can view movies.
-ADMIN: Can view, create, and delete movies and users.
+- Built using React and Semantic UI.
+- Supports GitHub & Google Oauth2 and direct login.
+- JWT token is used for all secured API requests.
+  ** Role-based UI:
+- USER: Can view movies.
+- ADMIN: Can view, create, and delete movies and users.
 
 # Application Url
-Application	URL	Credentials
-movie-api	http://localhost:8080/swagger-ui.html	
-movie-ui	http://localhost:3000	admin/admin, user/user, or signing up a new user
+- **Application	URL	Credentials:
+- **movie-api	http://localhost:8080/swagger-ui.html	
+- **movie-ui	http://localhost:3000	admin/admin, user/user, or signing up a new user
 
 # Testing the Application
 ## Manual Testing:
