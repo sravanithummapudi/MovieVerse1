@@ -37,6 +37,14 @@ A full-stack web application to manage movies using a Spring Boot backend (`movi
 - movie-api	http://localhost:8080/swagger-ui.html	
 - movie-ui	http://localhost:3000	admin, user, or signing up a new user
 
+# Images 
+Login Page:
+  ![image](https://github.com/user-attachments/assets/e38a51e9-0d08-4758-a1e4-f39e5622eb7f)
+  
+Admin Page: Accessible to ADMIN for managing (view/search/add/delete) both users and movies.
+  ![image](https://github.com/user-attachments/assets/f817735e-da04-4bd9-ad97-4ad5e19eeaf3)
+  ![image](https://github.com/user-attachments/assets/d092c32b-ec73-4f24-b7f6-98abbc8840bf)
+
 # Testing the Application
 ## Manual Testing:
 Access movie-ui at http://localhost:3000, Login using GitHub or google credentials.
