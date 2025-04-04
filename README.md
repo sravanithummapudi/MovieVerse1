@@ -9,18 +9,20 @@ A full-stack web application to manage movies using a Spring Boot backend (`movi
 - **API Docs**: Swagger
 
 # Endpoint Summary ( movie-api)
-Endpoint	Secured	Roles
-POST /auth/authenticate -d {"username","password"}	No	
-POST /auth/signup -d {"username","password","name","email"}	No	
-GET /public/numberOfUsers	No	
-GET /public/numberOfMovies	No	
-GET /api/users/me	Yes	ADMIN, USER
-GET /api/users	Yes	ADMIN
-GET /api/users/{username}	Yes	ADMIN
-DELETE /api/users/{username}	Yes	ADMIN
-GET /api/movies [?text]	Yes	ADMIN, USER
-POST /api/movies -d {"imdb","description"}	Yes	ADMIN
-DELETE /api/movies/{imdb}	Yes	ADMIN
+  | Endpoint                                                      | Secured | Roles           |
+  | ------------------------------------------------------------- | ------- | --------------- |
+  | `POST /auth/authenticate -d {"username","password"}`          | No      |                 |
+  | `POST /auth/signup -d {"username","password","name","email"}` | No      |                 |
+  | `GET /public/numberOfUsers`                                   | No      |                 |
+  | `GET /public/numberOfMovies`                                  | No      |                 |
+  | `GET /api/users/me`                                           | Yes     | `ADMIN`, `USER` |
+  | `GET /api/users`                                              | Yes     | `ADMIN`         |
+  | `GET /api/users/{username}`                                   | Yes     | `ADMIN`         |
+  | `DELETE /api/users/{username}`                                | Yes     | `ADMIN`         |
+  | `GET /api/movies [?text]`                                     | Yes     | `ADMIN`, `USER` |
+  | `POST /api/movies -d {"imdb","description"}`                  | Yes     | `ADMIN`         |
+  | `DELETE /api/movies/{imdb}`                                   | Yes     | `ADMIN`         |
+
 
 # Frontend (movie-ui)
 Built using React and Semantic UI.
@@ -36,29 +38,31 @@ movie-api	http://localhost:8080/swagger-ui.html
 movie-ui	http://localhost:3000	admin/admin, user/user, or signing up a new user
 
 # Testing the Application
-Manual Testing:
+## Manual Testing:
 Access movie-ui at http://localhost:3000, Login using GitHub or google credentials.
 
-Automatic Endpoints Test
+## Automatic Endpoints Test:
 Open a terminal and make sure you are in the root folder.
 Run the following script: ./movie-api/test-endpoints.sh
 It should return something like the output below, where it shows the http code for different requests:
+   Endpoints | without token |  user token |  admin token |
+    ------------------------- + ------------- + ----------- + ------------ |
+     GET public/numberOfUsers |           200 |         200 |          200 |
+    GET public/numberOfMovies |           200 |         200 |          200 |
+    ......................... + ............. + ........... + ............ |
+            GET /api/users/me |           401 |         200 |          200 |
+               GET /api/users |           401 |         403 |          200 |
+         GET /api/users/user2 |           401 |         403 |          200 |
+      DELETE /api/users/user2 |           401 |         403 |          200 |
+    ......................... + ............. + ........... + ............ |
+              GET /api/movies |           401 |         200 |          200 |
+             POST /api/movies |           401 |         403 |          201 |
+       DELETE /api/movies/abc |           401 |         403 |          200 |
+    ------------------------------------------------------------------------
+     [200] Success -  [201] Created -  [401] Unauthorized -  [403] Forbidden
 
- Endpoints | without token |  user token |  admin token |
-------------------------- + ------------- + ----------- + ------------ |
- GET public/numberOfUsers |           200 |         200 |          200 |
-GET public/numberOfMovies |           200 |         200 |          200 |
-......................... + ............. + ........... + ............ |
-        GET /api/users/me |           401 |         200 |          200 |
-           GET /api/users |           401 |         403 |          200 |
-     GET /api/users/user2 |           401 |         403 |          200 |
-  DELETE /api/users/user2 |           401 |         403 |          200 |
-......................... + ............. + ........... + ............ |
-          GET /api/movies |           401 |         200 |          200 |
-         POST /api/movies |           401 |         403 |          201 |
-   DELETE /api/movies/abc |           401 |         403 |          200 |
-------------------------------------------------------------------------
- [200] Success -  [201] Created -  [401] Unauthorized -  [403] Forbidden
+
+
 
 
 
