@@ -45,7 +45,7 @@ Access movie-ui at http://localhost:3000, Login using GitHub or google credentia
 - Open a terminal and make sure you are in the root folder.
 - Run the following script: ./movie-api/test-endpoints.sh
 - It should return something like the output below, where it shows the http code for different requests:
-
+```
                     Endpoints | without token |  user token |  admin token |
     ------------------------- + ------------- + ----------- + ------------ |
      GET public/numberOfUsers |           200 |         200 |          200 |
